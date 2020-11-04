@@ -15,14 +15,18 @@ class Node():
         rhs (Node): 右手のノード
     """
     def __init__(self, value):
-        self.value = value
         self.token_type = None
+        self.rhs = None
+        self.lhs = None
         if value.isdecimal():
             self.token_type = 'NUM'
+            self.value = value
         elif value == 'PLUS':
             self.token_type = 'OP'
+            self.value = '+'
         elif value == 'MINUS':
             self.token_type = 'OP'
+            self.value = '-'
         elif value == 'EOF':
             self.token_type = 'EOF'
 
